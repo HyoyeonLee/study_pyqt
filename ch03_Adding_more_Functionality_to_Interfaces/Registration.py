@@ -37,14 +37,16 @@ class CreateNewUser(QWidget):
         try:
             with open(new_user_image):
                 new_user = QLabel(self)
-                pixmap = QPixmap(new_user_image)
-                new_user.setPixmap(pixmap)
+                #pixmap = QPixmap(new_user_image)
+                #new_user.setPixmap(pixmap)
+                new_user.setPixmap(QPixmap(new_user_image))
                 new_user.move(150, 60)
         except FileNotFoundError:
             print("Image not found.")
 
-        login_label = QLabel(self)
-        login_label.setText("create new account")
+        #login_label = QLabel(self)
+        #login_label.setText("create new account")
+        login_label = QLabel("create new account",self)
         login_label.move(110, 20)
         login_label.setFont(QFont('Arial', 20))
 
